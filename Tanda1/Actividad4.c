@@ -16,7 +16,7 @@ void main()
     }
     if(pid == 0) // Proceso hijo 1
     {
-        printf("Soy el proceso hijo 1, Mi padre es %d y mi PID es %d \n" ,getppid(),getpid());
+        printf("Soy el hijo 1, Mi padre es %d y mi PID es %d \n" ,getppid(),getpid());
         exit(0);
     }
 
@@ -29,7 +29,7 @@ void main()
     }
     if(pid == 0) // Proceso hijo 2
     {
-        printf("Soy el proceso hijo 2, Mi padre es %d y mi PID es %d \n" ,getppid(),getpid());
+        printf("Soy el hijo 2, Mi padre es %d y mi PID es %d \n" ,getppid(),getpid());
         exit(0);
     }
 
@@ -42,7 +42,7 @@ void main()
     }
     if(pid == 0) // Proceso hijo 3
     {
-        printf("Soy el proceso hijo 3, Mi padre es %d y mi PID es %d \n" ,getppid(),getpid());
+        printf("Soy el hijo 3, Mi padre es %d y mi PID es %d \n" ,getppid(),getpid());
     }
     else 
     {

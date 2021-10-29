@@ -9,7 +9,6 @@ public class Actividad16 {
 		b.start(); 
 	} 
 }
-
 class Contador { // Instanciamos la clase contador
 	private int c=0;
 	Contador (int c) { 
@@ -26,7 +25,6 @@ class Contador { // Instanciamos la clase contador
 		return c; 
 	}
 }
-
 class HiloA extends Thread { //Clase HiloA
 	private Contador contador; // contador
 	public HiloA (String n, Contador c) {
@@ -42,8 +40,6 @@ class HiloA extends Thread { //Clase HiloA
 		}
 	}
 }
-
-
 class HiloB extends Thread { //Clase HiloB
 	private Contador contador; // contador
 	public HiloB (String n, Contador c) {

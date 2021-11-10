@@ -1,25 +1,31 @@
 //actividad9fifoescribe.c
+#define _DEFAULT_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <fcntl.h>
 #include <unistd.h>
-
+#include <fcntl.h>
 
 int main (void)
 {
-	int fd; //file decriptor
-	char saludo[] = "Obteniendo información....Un saludo....\n"; //saludo
+	int fp;
+	int p, bytesleidos;
+	char saludo[] = "Un saludo !!!!!\n";
+	p=mknod("FIFO2", S_IFIFO|0666, 0); /// permiso de lectura y escritura
+	
+	if (p== -1) {
+		printf("Ha ocurrido un error.... \n"); // recuerda borrarlo la segunda vez...
+		exit (0);
+	}
+	
+	fp = open ("FIFO2", 1); 
 
-	fd = open ("FIFOAiram", 1); /// abrimos fifo con permiso de escritura
-
-	if (fd == -1) { //si es -1 hay un error
+	if (fp == -1) {
 		printf("Error al abrir el fichero... \n");
  		exit (1);
 	}
-
 	printf("Mandando información al FIFO...\n");
-	write (fd, saludo, sizeof(saludo)); 	//escribimos en la pipe
-	close (fd); //cerramos
+	write (fp, saludo, sizeof(saludo)); 	
+	close (fp);
 	return(0);
 }

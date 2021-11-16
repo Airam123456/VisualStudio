@@ -16,7 +16,7 @@ void main()
 				printf("No se ha podido crear al hijo %d\n", i);
 				exit(-1); 
 			case 0: // Aqui entramos en el hijo
-				printf("Soy el hijo %d, Mi padre es %d y mi PID es %d\n", i, getppid(), getpid());
+				printf("Soy el hijo %d, Mi padre es %d y mi PID es %d\n", i, getppid(), pid);
 				pid = fork(); // Creamos un hijo al proceso hijo
 				break; 
 			default: // Aqui estamos en el padre

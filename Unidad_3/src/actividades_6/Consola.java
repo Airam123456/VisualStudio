@@ -1,4 +1,4 @@
-package actividades_5_6;
+package actividades_6;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;

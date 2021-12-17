@@ -6,8 +6,8 @@ import java.net.UnknownHostException;
 public class Actividad2 {
 	public static void main( String[] args ) { 
 		InetAddress address [];
-		String ipAddres = args[0];	//Argumento con la direccion
 		try {
+				String ipAddres = args[0];	//Argumento con la direccion
 				if(ipAddres.length() != 0) {	//Comprobamos que la direccion no esta vacia
 					address = InetAddress.getAllByName( ipAddres );
 					for (int i = 0; i < address.length; i++)
@@ -15,9 +15,8 @@ public class Actividad2 {
 				}
 				else	//Mensaje por si esta vacia
 					System.out.println("Se necesita una URL para obtener su dirección");
-		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (Exception e) {
+			System.out.println("Se necesita una URL para obtener su dirección");
 		}
 	}
 }

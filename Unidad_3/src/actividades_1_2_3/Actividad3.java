@@ -5,9 +5,10 @@ import java.net.UnknownHostException;
 
 public class Actividad3 {
 	public static void main( String[] args ) { 
-		InetAddress address [];
-		String ipAddres = args[0]; //Argumentos
+		
 		try {
+				InetAddress address [];
+				String ipAddres = args[0]; //Argumentos
 				address = InetAddress.getAllByName( ipAddres );
 				System.out.println("Dirección IP: " + address[0].getHostAddress());
 				System.out.println("Nombre: " + address[0].getHostName());
@@ -16,7 +17,7 @@ public class Actividad3 {
 				for (int i = 0; i < address.length; i++) {
 					System.out.println(address[i]);
 				}										
-		} catch (UnknownHostException e) {
+		} catch (Exception e) {
 			InetAddress local;
 			InetAddress localAddresses[];
 			try {
@@ -26,9 +27,8 @@ public class Actividad3 {
 				System.out.println("Nombre: " + localAddresses[0].getHostName());
 				for (int i = 0; i < localAddresses.length; i++)
 					System.out.println(localAddresses[i]);
-			} catch (UnknownHostException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
+			} catch (Exception e1) {
+
 			}
 		}
 	}

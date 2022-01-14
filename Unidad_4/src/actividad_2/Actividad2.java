@@ -9,9 +9,9 @@ public class Actividad2
 	public static void main (String [] args) 
 	{
 		FTPClient cliente = new FTPClient();
-		String servFTP = "localhost";
+		String servFTP = "172.20.132.110";
 		String usuario = "dinux";
-		String clave = "dinux";
+		String pass = "dinux";
 
 		try 
 		{
@@ -19,7 +19,7 @@ public class Actividad2
 			cliente.connect(servFTP);
 			
 			// Iniciamos sesion
-			if (cliente.login(usuario, clave) == true)
+			if (cliente.login(usuario, pass) == true)
 				System.out.println("Login correcto");
 			else 
 			{

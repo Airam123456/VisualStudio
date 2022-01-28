@@ -10,10 +10,11 @@ import javax.net.ssl.SSLSocket;
 
 public class SocketServidorSeguro 
 {
-
 	public static void main (String[] args) throws IOException 
 	{
 		int puerto = 6020;
+		System.setProperty("javax.net.ssl.keyStore","AlmacenSeguroBrito");
+		System.setProperty("javax.net.ssl.keyStorePassword","dm2server");
 		SSLServerSocketFactory sfact = (SSLServerSocketFactory) SSLServerSocketFactory.getDefault();
 		SSLServerSocket servidor= (SSLServerSocket) sfact.createServerSocket(puerto);
 
